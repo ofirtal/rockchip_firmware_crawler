@@ -1,14 +1,26 @@
-rockchip_firmware_crawler is a crawler intended to crawler a specific website - 'https://www.rockchipfirmware.com' and get:
-   1. download locally firmware files found.
-   2.collect metadata on each file and store it on MongoDB - Atlas.
+# rockchip_firmware_crawler
 
-The crawler is intended to run multiple times and update metadata if already exists in DB or add new items to mongo.
+The 'rockchip_firmware_crawlercrawler' crawler intended to download firmware files and collect metadata.
 
-in order to run this, you will need to configure mongo_atlas_connect.py => change "addres_to_mongo" to your own Atlas address. make sure it contains your username and password.
+It's designed to run multiple times and update metadata if already exists in DB or add new items to MongoDB.
 
-the from your CMD:
-CD to file location
-run "crawler_main.py [website_url]"
+The crawler is designed to crawler a specific website - 'www.rockchipfirmware.com'. 
 
-this was intended to run over www.rockchipfirmware.com:
-run "crawler_main.py https://www.rockchipfirmware.com"
+## How to run it?
+
+Run "crawler_main.py [website_url]"
+
+Example: "crawler_main.py https://www.rockchipfirmware.com"
+
+
+
+## What does it do?
+
+The Crawler:
+  
+1. Download firmware files found locally to firmware_files directory in the project.
+2. collects metadata on each file and store it on MongoDB - Atlas.
+
+
+In order to run this, you will need to configure mongo_atlas_connect.py =>
+change "addres_to_mongo" to your own Atlas address. Make sure it contains your username and password.
