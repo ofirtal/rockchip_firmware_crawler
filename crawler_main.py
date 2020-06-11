@@ -43,12 +43,12 @@ class CrawlerMain:
 
 
 if __name__ == "__main__":
-    #
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('website', help='Enter website url', type=str)
-    # args = parser.parse_args()
-    #
-    # CrawlerMain(args.website)
-    CrawlerMain('https://www.rockchipfirmware.com').go_over_pages()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('website', help='Enter website url', type=str)
+    args = parser.parse_args()
+
+    CrawlerMain(args.website).go_over_pages()
+    # CrawlerMain('https://www.rockchipfirmware.com').go_over_pages()
 
 # crawler_main.py https://www.rockchipfirmware.com
