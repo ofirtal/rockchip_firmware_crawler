@@ -2,6 +2,10 @@
 *.spec
 __pycache__/*
 venv/
+venv/*
 *.pyc
-*.idea
+.idea
+.idea/
+.idea/**
+.idea/*
 \
