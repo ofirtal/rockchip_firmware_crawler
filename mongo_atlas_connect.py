@@ -7,12 +7,10 @@ class MongoAtlasConnect:
     checks if item exists in the DB, if not then insert it. if it dose exists then it will update the metadata.
     """
     def __init__(self, data, db_name, table_name):
-        username = 'ofir'
-        password = 'ofir'
+        address_to_mongo = ""
 
         self.data = data
-        self.my_client = pymongo.MongoClient(f"mongodb+srv://{username}:{password}@cluster0-n0goo.gcp.mongodb.net/"
-                                             f"<dbname>?retryWrites""=true&w=majority")
+        self.my_client = pymongo.MongoClient(address_to_mongo)
         self.database_name = self.my_client[db_name]
         self.my_collection = self.database_name[table_name]
 
