@@ -2,6 +2,9 @@ from bs4 import BeautifulSoup
 
 
 class GetMetaData:
+    """
+    get the metadata from page. the program will get metadata even if there is no firmware file to download
+    """
     def __init__(self, soup: BeautifulSoup, file_name, page):
         self.page = page
         self.soup = soup

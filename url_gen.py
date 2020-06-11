@@ -6,7 +6,7 @@ class UrlGen:
         self.base_url = base_url
 
     def all_links_in_page(self, page_url):
-        soup = ConnectToPage(page_url).soup
+        soup = ConnectToPage(page_url).get_soup()
         links = soup.find_all('td', {'class': 'views-field views-field-title'})
         for link in links:
             link_a_tags = link.find('a')
@@ -14,7 +14,7 @@ class UrlGen:
             yield self.full_link(link_href)
 
     def next_page(self, page_url):
-        soup = ConnectToPage(page_url).soup
+        soup = ConnectToPage(page_url).get_soup()
         next_link = soup.find('a', {'title': 'Go to next page'})
 
         if next_link is not None:
@@ -23,6 +23,4 @@ class UrlGen:
             return next_full_link
 
     def full_link(self, link):
-        return '{}/{}'.format(self.base_url, link)
-
-
+        return f'{self.base_url}/{link}'

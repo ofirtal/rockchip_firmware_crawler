@@ -2,6 +2,10 @@ import pymongo
 
 
 class MongoAtlasConnect:
+    """
+    connects to MongoDB Atlas.
+    checks if item exists in the DB, if not then insert it. if it dose exists then it will update the metadata.
+    """
     def __init__(self, data, db_name, table_name):
         username = 'ofir'
         password = 'ofir'
@@ -21,7 +25,7 @@ class MongoAtlasConnect:
             self.insert_metadata()
 
     def update_metadata(self, obj_id):
-        self.my_collection.update_one({'_id':obj_id}, {"$set": {'metadata': self.data['metadata']}})
+        self.my_collection.update_one({'_id': obj_id}, {"$set": {'metadata': self.data['metadata']}})
         print('metadata updated in mongo')
 
     def insert_metadata(self):
