@@ -49,6 +49,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     CrawlerMain(args.website).go_over_pages()
-    # CrawlerMain('https://www.rockchipfirmware.com').go_over_pages()
-
-# crawler_main.py https://www.rockchipfirmware.com
