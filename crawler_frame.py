@@ -36,4 +36,4 @@ class CrawlerMainFrame:
         metadata_dict = GetMetaData(inside_page_soup, file_name, self.page).get_metadata()
         print('metadata ok')
 
-        MongoAtlasConnect(metadata_dict, 'arc_test_db', 'firmware files').dose_item_exists()
+        MongoAtlasConnect(metadata_dict, 'firmware_files_DB', 'firmware files').dose_item_exists()
