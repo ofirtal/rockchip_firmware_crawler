@@ -6,3 +6,9 @@ The crawler is intended to run multiple times and update metadata if already exi
 
 in order to run this, you will need to configure mongo_atlas_connect.py => change "addres_to_mongo" to your own Atlas address. make sure it contains your username and password.
 
+the from your CMD:
+CD to file location
+run "crawler_main.py [website_url]"
+
+this was intended to run over www.rockchipfirmware.com:
+run "crawler_main.py https://www.rockchipfirmware.com"
